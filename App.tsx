@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LeadPopup from './components/LeadPopup';
 import FloatingChat from './components/FloatingChat';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const App: React.FC = () => {
   const [isAdmin, setIsAdmin] = useState<boolean>(() => {
@@ -28,6 +29,7 @@ const App: React.FC = () => {
         <ScrollToTop />
         <Navbar isAdmin={isAdmin} />
         <LeadPopup />
+        <WhatsAppButton />
         <FloatingChat />
         
         <main className="flex-grow pt-20">
