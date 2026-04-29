@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketing Hub | Local Build Intelligence</title>
+    
+    <!-- FAVICON CONFIGURATION FOR GOOGLE SEARCH -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/B5xk939r/logo-modified-removebg-preview-removebg-preview.png" />
+    <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/B5xk939r/logo-modified-removebg-preview-removebg-preview.png" />
+    <link rel="apple-touch-icon" href="https://i.ibb.co/B5xk939r/logo-modified-removebg-preview-removebg-preview.png" />
+
+    <!-- META TAGS FOR SEARCH RESULTS & SOCIAL MEDIA -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Marketing Hub | Local Build Intelligence" />
+    <meta property="og:description" content="High-performance AI marketing agency platform." />
+    <meta property="og:image" content="https://i.ibb.co/B5xk939r/logo-modified-removebg-preview-removebg-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://i.ibb.co/B5xk939r/logo-modified-removebg-preview-removebg-preview.png" />
+    
+    <script>
+      // Prevent third-party libraries from crashing the app by trying to override the read-only fetch getter
+      (function() {
+        const originalFetch = window.fetch;
+        try {
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return originalFetch; },
+            set: function() { 
+              console.warn('Blocked attempt to override window.fetch'); 
+            },
+            configurable: true
+          });
+        } catch (e) {
+          // If we can't redefine it, it's already locked, which is fine
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-950 text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-400">
+    <div class="scanline-overlay animate-scanline"></div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

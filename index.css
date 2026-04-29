@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-inter m-0;
+    font-family: 'Inter', sans-serif;
+    background-color: #020617;
+  }
+}
+
+/* Custom scrollbar to match the high-performance aesthetic */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #020617; }
+::-webkit-scrollbar-thumb { background: #1e293b; border: 2px solid #020617; border-radius: 10px; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: #22d3ee; }
+
+.glass-effect {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Digital Grid Pattern - Updated for dark mode with subtle glow */
+.digital-grid {
+  background-image: 
+    linear-gradient(to right, rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Scanline Effect - Subtle cyan light version */
+.scanline-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(34, 211, 238, 0.3), transparent);
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+}

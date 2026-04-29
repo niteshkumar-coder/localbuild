@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "Information submitted via contact or lead forms",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Identity_Name of the person"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Network_Email for communication"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Secure_Phone_Link for contact"
+        },
+        "serviceInterested": {
+          "type": "string",
+          "description": "Service_Classification selected by user"
+        },
+        "message": {
+          "type": "string",
+          "description": "Data_Payload_Message provided by user"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of submission"
+        },
+        "responded": {
+          "type": "boolean",
+          "description": "Whether the admin has responded to this lead"
+        }
+      },
+      "required": ["name", "email", "createdAt", "responded"]
+    }
+  },
+  "firestore": {
+    "leads/{leadId}": {
+      "schema": "Lead",
+      "description": "Collection of business inquiries and leads"
+    }
+  }
+}
