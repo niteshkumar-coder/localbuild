@@ -145,17 +145,20 @@ const Home: React.FC<HomeProps> = ({ onAdminLogin }) => {
                     ))}
                   </ul>
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                     <button 
                       onClick={() => setSelectedService(service)}
-                      className="text-[10px] md:text-xs font-black text-cyan-400 uppercase tracking-widest hover:text-white transition-all flex items-center gap-2"
+                      className="flex-1 py-3 px-4 bg-slate-950 border border-slate-700 text-cyan-400 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-slate-800 hover:border-cyan-500 transition-all flex items-center justify-center gap-2 group/btn shadow-lg"
                     >
-                      Learn_More_
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      Learn_More
+                      <svg className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
                       </svg>
                     </button>
-                    <Link to="/contact" className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-widest hover:text-cyan-500 transition-all">
+                    <Link 
+                      to="/contact" 
+                      className="flex-1 py-3 px-4 bg-white text-slate-950 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-cyan-500 hover:text-white transition-all text-center shadow-[0_0_15px_rgba(255,255,255,0.1)] active:scale-95"
+                    >
                       Deploy_
                     </Link>
                   </div>

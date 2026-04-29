@@ -58,9 +58,9 @@ const ServicesPage: React.FC = () => {
 
                 <button 
                   onClick={() => setSelectedService(service)}
-                  className="w-full py-4 md:py-5 bg-slate-950 text-white rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-[0.3em] hover:bg-white hover:text-slate-950 transition-all border border-slate-800 hover:border-white shadow-xl active:scale-95"
+                  className="w-full py-4 md:py-5 bg-white text-slate-950 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-[0.3em] hover:bg-cyan-500 hover:text-white transition-all border-none shadow-[0_0_30px_rgba(34,211,238,0.2)] active:scale-95"
                 >
-                  Learn_More_
+                  Explore_Module_
                 </button>
               </div>
             </div>
