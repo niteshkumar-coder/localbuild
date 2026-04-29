@@ -75,18 +75,186 @@ class FirestoreService {
 
   async getServices(): Promise<Service[]> {
     return [
-      { id: '3', title: 'Website Design', description: 'Modern, high-converting websites built for speed and SEO dominance.', icon: '🌐', category: 'Design' },
-      { id: '4', title: 'Google Ads Management', description: 'Hyper-targeted search campaigns that drive immediate qualified leads.', icon: '🎯', category: 'Marketing' },
-      { id: '5', title: 'Meta Ads Management', description: 'Dominating Instagram and Facebook feeds with high-impact video creative.', icon: '📱', category: 'Marketing' },
-      { id: '6', title: 'Application Design', description: 'User-centric UI/UX for high-performance mobile and web applications.', icon: '🎨', category: 'Design' },
-      { id: '7', title: 'Google Digital Profile Build', description: 'Expert GMB optimization to make your local business rank #1.', icon: '🏢', category: 'Business' },
-      { id: '8', title: 'Digital Profile Ads', description: 'Specialized local ads to boost your profile visibility instantly.', icon: '🔝', category: 'Marketing' },
-      { id: '9', title: 'Ecommerce Management', description: 'Full-stack store management, conversion optimization, and scaling.', icon: '🛒', category: 'E-commerce' },
-      { id: '10', title: 'Dropshipping Systems', description: 'Automated high-margin retail systems with zero inventory stress.', icon: '📦', category: 'E-commerce' },
-      { id: '11', title: 'Affiliate Marketing', description: 'Scaling reach through high-performance partner networks.', icon: '🤝', category: 'Marketing' },
-      { id: '1', title: 'YouTube Growth', description: 'Scale your personal or business brand with AI-optimized content.', icon: '📺', category: 'Marketing' },
-      { id: '2', title: 'AI Solutions', description: 'Custom intelligence for automated lead gen and support.', icon: '🤖', category: 'AI' },
-      { id: '12', title: 'Network Marketing', description: 'Strategic digital funnels for MLM and network growth.', icon: '🚀', category: 'Marketing' }
+      { 
+        id: '3', 
+        title: 'Website Design', 
+        description: 'Modern, high-converting websites built for speed and SEO dominance.', 
+        icon: '🌐', 
+        category: 'Design',
+        features: [
+          'Custom responsive website design (mobile-friendly)',
+          'Fast loading & performance optimization',
+          'SEO-friendly structure',
+          'Modern UI/UX layout',
+          'Contact forms & lead capture system',
+          'Basic security & hosting guidance'
+        ]
+      },
+      { 
+        id: '4', 
+        title: 'Google Ads Management', 
+        description: 'Hyper-targeted search campaigns that drive immediate qualified leads.', 
+        icon: '🎯', 
+        category: 'Marketing',
+        features: [
+          'Keyword research & competitor analysis',
+          'Campaign setup (Search/Display Ads)',
+          'High-converting ad copywriting',
+          'Budget optimization & bidding strategy',
+          'Conversion tracking setup',
+          'Weekly performance reports'
+        ]
+      },
+      { 
+        id: '5', 
+        title: 'Meta Ads Management', 
+        description: 'Dominating Instagram and Facebook feeds with high-impact video creative.', 
+        icon: '📱', 
+        category: 'Marketing',
+        features: [
+          'Facebook & Instagram ad setup',
+          'Audience targeting & retargeting',
+          'Creative (image/video) strategy',
+          'Campaign optimization for leads/sales',
+          'Pixel setup & tracking',
+          'Performance monitoring & scaling'
+        ]
+      },
+      { 
+        id: '6', 
+        title: 'Application Design', 
+        description: 'User-centric UI/UX for high-performance mobile and web applications.', 
+        icon: '🎨', 
+        category: 'Design',
+        features: [
+          'Mobile & web app UI/UX design',
+          'Wireframing & prototyping',
+          'User-friendly navigation',
+          'Modern & clean interface design',
+          'App flow optimization',
+          'Developer-ready design files'
+        ]
+      },
+      { 
+        id: '7', 
+        title: 'Google Digital Profile Build', 
+        description: 'Expert GMB optimization to make your local business rank #1.', 
+        icon: '🏢', 
+        category: 'Business',
+        features: [
+          'Google Business Profile setup',
+          'Business info optimization',
+          'Keywords & local SEO setup',
+          'Image & post management',
+          'Review management strategy',
+          'Map ranking improvement'
+        ]
+      },
+      { 
+        id: '8', 
+        title: 'Digital Profile Ads', 
+        description: 'Specialized local ads to boost your profile visibility instantly.', 
+        icon: '🔝', 
+        category: 'Marketing',
+        features: [
+          'Local ad campaign setup',
+          'Call & location-based targeting',
+          'Profile traffic boosting',
+          'Budget optimization',
+          'Instant visibility increase',
+          'Performance tracking'
+        ]
+      },
+      { 
+        id: '9', 
+        title: 'Ecommerce Management', 
+        description: 'Full-stack store management, conversion optimization, and scaling.', 
+        icon: '🛒', 
+        category: 'E-commerce',
+        features: [
+          'Online store setup (Shopify/WooCommerce)',
+          'Product listing & optimization',
+          'Payment gateway integration',
+          'Conversion rate optimization',
+          'Order & inventory management',
+          'Sales scaling strategy'
+        ]
+      },
+      { 
+        id: '10', 
+        title: 'Dropshipping Systems', 
+        description: 'Automated high-margin retail systems with zero inventory stress.', 
+        icon: '📦', 
+        category: 'E-commerce',
+        features: [
+          'Ready-to-launch dropshipping store',
+          'Winning product research',
+          'Supplier integration',
+          'Automated order fulfillment',
+          'Ad strategy for sales',
+          'Profit optimization system'
+        ]
+      },
+      { 
+        id: '11', 
+        title: 'Affiliate Marketing', 
+        description: 'Scaling reach through high-performance partner networks.', 
+        icon: '🤝', 
+        category: 'Marketing',
+        features: [
+          'Affiliate program setup',
+          'Partner onboarding system',
+          'Commission structure setup',
+          'Tracking & analytics',
+          'Promotion strategy',
+          'Revenue scaling plan'
+        ]
+      },
+      { 
+        id: '1', 
+        title: 'YouTube Growth', 
+        description: 'Scale your personal or business brand with AI-optimized content.', 
+        icon: '📺', 
+        category: 'Marketing',
+        features: [
+          'Channel setup & branding',
+          'SEO-optimized titles & tags',
+          'Content strategy planning',
+          'Thumbnail & video optimization',
+          'Audience growth techniques',
+          'Monetization guidance'
+        ]
+      },
+      { 
+        id: '2', 
+        title: 'AI Solutions', 
+        description: 'Custom intelligence for automated lead gen and support.', 
+        icon: '🤖', 
+        category: 'AI',
+        features: [
+          'AI chatbot integration',
+          'Lead automation systems',
+          'Customer support automation',
+          'Data analysis tools',
+          'Workflow automation',
+          'Custom AI solutions'
+        ]
+      },
+      { 
+        id: '12', 
+        title: 'Network Marketing', 
+        description: 'Strategic digital funnels for MLM and network growth.', 
+        icon: '🚀', 
+        category: 'Marketing',
+        features: [
+          'Lead generation funnel',
+          'Landing page setup',
+          'Automation tools integration',
+          'Team growth strategy',
+          'Follow-up system',
+          'Conversion optimization'
+        ]
+      }
     ];
   }
 

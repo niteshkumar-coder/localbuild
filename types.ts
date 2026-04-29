@@ -5,6 +5,7 @@ export interface Service {
   description: string;
   icon: string;
   category: 'Marketing' | 'AI' | 'Design' | 'E-commerce' | 'Business';
+  features?: string[];
 }
 
 export interface BlogPost {

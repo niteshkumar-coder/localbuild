@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { db } from '../services/firestore';
 import { Service } from '../types';
 import AdminAccessModal from '../components/AdminAccessModal';
+import ServiceDetailModal from '../components/ServiceDetailModal';
 
 interface HomeProps {
   onAdminLogin: (status: boolean) => void;
@@ -12,6 +13,7 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ onAdminLogin }) => {
   const [services, setServices] = useState<Service[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
   
   const LOGO_URL = 'https://i.ibb.co/B5xk939r/logo-modified-removebg-preview-removebg-preview.png';
   const FOUNDER_IMAGE_URL = 'https://i.ibb.co/4ntzNcw5/me.png';
@@ -122,25 +124,56 @@ const Home: React.FC<HomeProps> = ({ onAdminLogin }) => {
               <h2 className="text-3xl md:text-7xl font-black tracking-tighter text-white">Full Service <br className="hidden md:block" /> <span className="text-slate-500">Intelligence.</span></h2>
             </div>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
             {services.map((service, idx) => (
-              <div key={service.id} className="group relative p-4 md:p-12 bg-slate-900/40 backdrop-blur-xl border border-slate-800 rounded-xl md:rounded-[3.5rem] hover:shadow-2xl hover:border-cyan-500/50 transition-all duration-500 overflow-hidden">
-                <div className="w-10 h-10 md:w-20 md:h-20 bg-slate-800/50 border border-slate-700 rounded-xl md:rounded-3xl flex items-center justify-center text-xl md:text-5xl mb-4 md:mb-12 group-hover:scale-110 transition-transform">
+              <div key={service.id} className="group relative p-8 md:p-12 bg-slate-900/40 backdrop-blur-xl border border-slate-800 rounded-3xl md:rounded-[3.5rem] hover:shadow-2xl hover:border-cyan-500/50 transition-all duration-500 overflow-hidden flex flex-col h-full">
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-slate-800/50 border border-slate-700 rounded-xl md:rounded-3xl flex items-center justify-center text-2xl md:text-5xl mb-6 md:mb-12 group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xs md:text-3xl font-black text-white mb-2 md:mb-6 group-hover:text-cyan-400 transition-colors uppercase tracking-tight leading-tight">{service.title}</h3>
-                <p className="text-slate-500 text-[9px] md:text-base leading-snug md:leading-relaxed mb-4 md:mb-12 line-clamp-2 md:line-clamp-none">{service.description}</p>
-                <Link to="/contact" className="inline-flex items-center text-[8px] md:text-xs font-black text-cyan-400 uppercase tracking-widest hover:text-white transition-all">
-                  Deploy_
-                </Link>
+                <h3 className="text-xl md:text-3xl font-black text-white mb-2 md:mb-6 group-hover:text-cyan-400 transition-colors uppercase tracking-tight leading-tight">{service.title}</h3>
+                <p className="text-slate-500 text-[10px] md:text-base leading-snug md:leading-relaxed mb-6 md:mb-12 opacity-80">{service.description}</p>
+                
+                <div className="mt-auto space-y-6">
+                  <ul className="space-y-2 hidden md:block">
+                    {service.features?.slice(0, 3).map((item, i) => (
+                      <li key={i} className="flex items-start text-xs text-slate-500 group-hover:text-slate-400 transition-colors">
+                        <svg className="w-4 h-4 mr-2 text-cyan-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex items-center justify-between">
+                    <button 
+                      onClick={() => setSelectedService(service)}
+                      className="text-[10px] md:text-xs font-black text-cyan-400 uppercase tracking-widest hover:text-white transition-all flex items-center gap-2"
+                    >
+                      Learn_More_
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                    <Link to="/contact" className="text-[10px] md:text-xs font-black text-slate-500 uppercase tracking-widest hover:text-cyan-500 transition-all">
+                      Deploy_
+                    </Link>
+                  </div>
+                </div>
+
                 {/* Digital accent */}
-                <div className="absolute top-0 right-0 p-2 opacity-10 font-mono text-[8px] text-cyan-500 hidden md:block">
+                <div className="absolute top-0 right-0 p-2 opacity-10 font-mono text-[10px] text-cyan-500 hidden md:block">
                   MOD_0{idx + 1}
                 </div>
               </div>
             ))}
           </div>
         </div>
+
+        <ServiceDetailModal 
+          service={selectedService} 
+          onClose={() => setSelectedService(null)} 
+        />
       </section>
 
 
